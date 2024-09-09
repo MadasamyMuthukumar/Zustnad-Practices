@@ -1,6 +1,7 @@
 import { create } from "zustand";
 import { produce } from "immer";
 import { createSelectors } from "./createCartSelectors";
+import { devtools, persist } from "zustand/middleware";
 /**
  * Create one custom hook that will be entry point for our hook
  * equal to slice in redux and going to contains our initial state and all different actions to deal with state
@@ -41,3 +42,27 @@ export const useCartStore = create((set) => ({
 //By using createSelector function, generating all selector fns by passing our store to it
 
 export const useCartStoreSelectors = createSelectors(useCartStore)
+
+//toggling object
+// courseArr = [
+//     name: fds
+//     age: dds
+//     course:dfdsfd
+//     completed: false
+// ]
+// toggleValue : (id)=>set(
+//     produce(
+//         (state)=> {
+//             state.courseArr = state.courseArr.map((course)=> course.id === id ? completed = !course.completed : course )
+//         }
+//     )
+// )
+
+
+// const useCartStore =  create (   to create dev tools in browser and store it in local storage
+//     devtools (
+//         persist (ourStore, {
+//             name: "CartStore"
+//         })
+//     )
+// )
