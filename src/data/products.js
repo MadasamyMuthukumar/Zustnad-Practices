@@ -1,0 +1,33 @@
+export const products = [
+    {
+        id:1,
+        name:"ghjk",
+        desc:"fghjkl"
+    },
+
+    {
+        id:2,
+        name:"werty",
+        desc:"fghjkl"
+    },
+    {
+        id:3,
+        name:"uiop",
+        desc:"fghjkl"
+    },
+    {
+        id:4,
+        name:"wertyh",
+        desc:"fghjkl"
+    },
+    {
+        id:5,
+        name:"vhhgv",
+        desc:"fghjkl"
+    },
+    {
+        id:6,
+        name:"xfxxf",
+        desc:"fghjkl"
+    }
+]
