@@ -9,6 +9,8 @@ import RQposts from './components/reactQuery/RQposts'
 import PostDetails from './components/reactQuery/PostDetails'
 import Pagination from './components/reactQuery/Pagination'
 import InfiniteQueries from './components/reactQuery/InfiniteQueries'
+import Countries from './components/reactQuery/Countries'
+// import Form from './components/form'
 
 const App = () => {
   const queryClient = useQueryClient()
@@ -69,6 +71,7 @@ const App = () => {
         <Route exact path='/fruits' element={<Pagination />} />
         <Route exact path='/infinite-fruits' element={<InfiniteQueries />} />
       </Routes>
+      
       {/* {
         isPending && <h1>Data being Added!</h1>
       }
@@ -85,6 +88,7 @@ const App = () => {
           <li key={item.id}>{item.title}</li>
         ))}
       </ul> */}
+      <Countries />
     </div>
     </BrowserRouter>
   )
