@@ -9,7 +9,7 @@ const Pagination = () => {
 
     }
     // console.log(postId)
-    const { data, isLoading, isError, error, } = useQuery({
+    const { data, isLoading, isError, error,isPlaceholderData } = useQuery({
         queryKey: ['games', page],
         queryFn: () => fetchFruits(page),
         //prevent loading text from showing on screen while changing pages by retaining previous data
@@ -33,5 +33,8 @@ const Pagination = () => {
         </div>
     )
 }
-
+/**
+ * prev -> setPage(prev => Math.max(prev-1,0))
+ * next -> ()=> { if(!isPlaceholderData) setPage(prev => prev+1)} disbled ={isPlaceholderData}
+ */
 export default Pagination

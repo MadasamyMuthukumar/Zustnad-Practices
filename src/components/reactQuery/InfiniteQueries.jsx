@@ -27,6 +27,7 @@ const InfiniteQueries = () => {
             //if all pages are already fetched then return undefined
             if (allPage.length < 5) return allPage.length + 1
             else return undefined
+            //OR return lastPage.length==0 ? null : allpage.length +1
 
         }
 
@@ -50,6 +51,10 @@ const InfiniteQueries = () => {
                     ))
                 })
             }
+             {/**OR else flatend the array before access
+              * const post = data ? data.pages.flatMap((page => page)) : [] 
+              * now use flated post to render
+              */}
             {/* <button onClick={fetchNextPage} disabled={!hasNextPage}>Load more</button> */}
             <div ref={ref}>
                 {

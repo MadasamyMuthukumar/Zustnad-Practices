@@ -12,7 +12,9 @@ const PostDetails = () => {
     // console.log(postId)
     const {data, isLoading, isError, error,}= useQuery({
         queryKey:['posts',postId],
-        queryFn:()=>fetchUniqueDetails(postId)
+        queryFn:()=>fetchUniqueDetails(postId),
+        // refetchOnMount:true , //when component remounts , there will be a fetch again
+        // refetchOnReconnect: true, //when the network goes offline and again get connected, there will be a fetch
     })
     const {title, body} = data?.data || {}
     if(isError) return <h2>{error.message}</h2>
